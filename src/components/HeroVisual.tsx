@@ -1,9 +1,9 @@
 const nodes = [
-  { label: "AI", sub: "Agents · LLMs", x: 50, y: 14, accent: "bg-accent" },
-  { label: "DATA", sub: "Pipelines · SQL", x: 84.24, y: 38.88, accent: "bg-teal" },
-  { label: "AUTOMATION", sub: "Workflows · Cron", x: 71.16, y: 79.12, accent: "bg-amber" },
-  { label: "OPERATIONS", sub: "Scale · Markets", x: 28.84, y: 79.12, accent: "bg-violet" },
-  { label: "DEPLOYMENT", sub: "Ship · Measure", x: 15.76, y: 38.88, accent: "bg-accent" },
+  { label: "AI", x: 50, y: 16, accent: "bg-accent" },
+  { label: "DATA", x: 82.34, y: 39.49, accent: "bg-teal" },
+  { label: "AUTOMATION", x: 69.98, y: 77.51, accent: "bg-amber" },
+  { label: "OPERATIONS", x: 30.02, y: 77.51, accent: "bg-violet" },
+  { label: "DEPLOYMENT", x: 17.66, y: 39.49, accent: "bg-accent" },
 ];
 
 export function HeroVisual() {
@@ -41,23 +41,16 @@ export function HeroVisual() {
           </span>
         </div>
 
-        {nodes.map((n, i) => (
+        {nodes.map((n) => (
           <div
             key={n.label}
-            className="absolute flex -translate-x-1/2 -translate-y-1/2 animate-float-slow flex-col items-center rounded-xl border border-line bg-surface px-3 py-2 shadow-soft"
-            style={{
-              left: `${n.x}%`,
-              top: `${n.y}%`,
-              animationDelay: `${i * 0.8}s`,
-            }}
+            className="absolute flex w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center gap-1.5 whitespace-nowrap rounded-xl border border-line bg-surface px-2 py-2 shadow-soft"
+            style={{ left: `${n.x}%`, top: `${n.y}%` }}
           >
-            <span className="flex items-center gap-1.5">
-              <span className={`h-1.5 w-1.5 rounded-full ${n.accent}`} />
-              <span className="font-mono text-[0.7rem] font-semibold tracking-wide text-ink">
-                {n.label}
-              </span>
+            <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${n.accent}`} />
+            <span className="font-mono text-[0.68rem] font-semibold tracking-wide text-ink">
+              {n.label}
             </span>
-            <span className="mt-0.5 text-[0.62rem] text-faint">{n.sub}</span>
           </div>
         ))}
       </div>
