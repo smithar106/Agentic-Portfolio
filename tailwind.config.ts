@@ -28,7 +28,7 @@ const config: Config = {
         mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       fontSize: {
-        display: ["clamp(2.6rem, 6vw, 4.75rem)", { lineHeight: "1.02", letterSpacing: "-0.035em" }],
+        display: ["clamp(2.4rem, 5vw, 4rem)", { lineHeight: "1.05", letterSpacing: "-0.032em" }],
         hero: ["clamp(2rem, 4.2vw, 3.4rem)", { lineHeight: "1.08", letterSpacing: "-0.03em" }],
         title: ["clamp(1.8rem, 3.2vw, 2.6rem)", { lineHeight: "1.12", letterSpacing: "-0.025em" }],
         section: ["clamp(1.5rem, 2.4vw, 2rem)", { lineHeight: "1.18", letterSpacing: "-0.02em" }],
