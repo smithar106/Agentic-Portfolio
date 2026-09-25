@@ -35,7 +35,7 @@ export const profile = {
     stats: [
       { value: "4.5+", label: "years at Lime" },
       { value: "75+", label: "markets" },
-      { value: "3", label: "AI/data products built" },
+      { value: "4", label: "AI/data products built" },
     ],
   },
 

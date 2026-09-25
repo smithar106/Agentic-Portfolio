@@ -22,9 +22,9 @@ const liveProducts = projects
 const entries: Entry[] = [
   {
     keywords: ["built", "ai", "build", "made", "created", "projects", "products"],
-    answer: `Arthur has personally built three AI and data products: ${liveProducts
+    answer: `Arthur has personally built four AI and data products: ${liveProducts
       .map((p) => p.name)
-      .join(", ")}. Compass is an evidence-based decision intelligence platform; Weather Outliers is a production anomaly-detection and explanation system across 50 cities; and Flight Pulse is U.S. flight operations intelligence with a grounded AI reasoning layer.`,
+      .join(", ")}. Compass is an evidence-based decision intelligence platform; Weather Outliers is a production anomaly-detection and explanation system across 50 cities; Flight Pulse is U.S. flight operations intelligence with a grounded AI reasoning layer; and PLANET is an autonomous Earth-intelligence agent.`,
     references: liveProducts.map((p) => ({
       label: p.name,
       href: `/projects/${p.slug}`,
