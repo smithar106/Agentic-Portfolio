@@ -1,9 +1,9 @@
 const nodes = [
-  { label: "AI", sub: "Agents · LLMs", x: 50, y: 16, accent: "bg-accent" },
-  { label: "DATA", sub: "Pipelines · SQL", x: 85, y: 38, accent: "bg-teal" },
-  { label: "AUTOMATION", sub: "Workflows · Cron", x: 78, y: 78, accent: "bg-amber" },
-  { label: "OPERATIONS", sub: "Scale · Markets", x: 22, y: 78, accent: "bg-violet" },
-  { label: "DEPLOYMENT", sub: "Ship · Measure", x: 15, y: 38, accent: "bg-accent" },
+  { label: "AI", sub: "Agents · LLMs", x: 50, y: 14, accent: "bg-accent" },
+  { label: "DATA", sub: "Pipelines · SQL", x: 84.24, y: 38.88, accent: "bg-teal" },
+  { label: "AUTOMATION", sub: "Workflows · Cron", x: 71.16, y: 79.12, accent: "bg-amber" },
+  { label: "OPERATIONS", sub: "Scale · Markets", x: 28.84, y: 79.12, accent: "bg-violet" },
+  { label: "DEPLOYMENT", sub: "Ship · Measure", x: 15.76, y: 38.88, accent: "bg-accent" },
 ];
 
 export function HeroVisual() {
