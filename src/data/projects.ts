@@ -1,5 +1,3 @@
-import { TODO_FLIGHT_APP_URL } from "./config";
-
 export type AccentKey = "blue" | "teal" | "amber" | "violet";
 
 export type Project = {
@@ -161,7 +159,7 @@ export const projects: Project[] = [
       "Reproducibility is a feature: re-running a day must produce a byte-identical board.",
       "A ground-truth evaluation suite turns “grounded generation” from a claim into a measured property.",
     ],
-    liveUrl: "https://weather-outliers-production.up.railway.app",
+    liveUrl: "https://weather-outliers-app.up.railway.app/",
     githubUrls: [
       { label: "Weather Outliers", url: "https://github.com/smithar106/Weather-Outliers" },
     ],
@@ -228,7 +226,7 @@ export const projects: Project[] = [
       "A golden question set run through the agent with the LLM disabled makes grounding testable and reproducible in CI.",
       "Label every figure by its source tier — daily, baseline, or demo — so data honesty is structural, not editorial.",
     ],
-    liveUrl: TODO_FLIGHT_APP_URL,
+    liveUrl: "https://flight-monitor-app.up.railway.app/",
     githubUrls: [
       { label: "Flight Pulse", url: "https://github.com/smithar106/Flight-Monitor" },
     ],
