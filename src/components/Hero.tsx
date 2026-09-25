@@ -10,8 +10,8 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden">
-      <div className="container-px grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
-        <div className="flex flex-col items-start gap-6">
+      <div className="container-px grid items-center gap-10 py-10 sm:py-12 lg:grid-cols-[1.05fr_0.95fr] lg:py-16">
+        <div className="flex flex-col items-start gap-4">
           <span className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-1.5 text-micro font-medium text-muted">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal opacity-60" />
@@ -20,7 +20,7 @@ export function Hero() {
             {profile.availability}
           </span>
 
-          <h1 className="text-balance font-sans text-display font-semibold tracking-tight text-ink">
+          <h1 className="text-balance font-sans text-hero font-semibold tracking-tight text-ink">
             {profile.headline.split("AI, data, and automation")[0]}
             <span className="serif-accent text-accent">AI, data, and automation</span>
             {profile.headline.split("AI, data, and automation")[1]}

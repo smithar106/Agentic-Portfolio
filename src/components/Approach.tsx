@@ -6,7 +6,7 @@ export function Approach() {
   const steps = profile.approach.steps;
 
   return (
-    <section className="border-t border-line bg-surface py-20 sm:py-28">
+    <section className="border-t border-line bg-surface py-14 sm:py-16">
       <div className="container-px">
         <Reveal>
           <SectionHeading
@@ -22,7 +22,7 @@ export function Approach() {
         </Reveal>
 
         <Reveal delay={80}>
-          <ol className="mt-12 flex flex-col gap-0 lg:flex-row lg:items-stretch">
+          <ol className="mt-8 flex flex-col gap-0 lg:flex-row lg:items-stretch">
             {steps.map((step, i) => (
               <li key={step} className="group relative flex flex-1 flex-col">
                 <div className="flex items-center gap-4 lg:flex-col lg:items-start lg:gap-0">

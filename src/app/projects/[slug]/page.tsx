@@ -49,7 +49,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     <div className="bg-paper">
       <header className={`relative overflow-hidden border-b border-line bg-gradient-to-br ${a.soft} to-surface`}>
         <div className="dot-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true" />
-        <div className="container-px relative py-16 sm:py-20">
+        <div className="container-px relative py-12 sm:py-16">
           <Link
             href="/#projects"
             className="mb-8 inline-flex items-center gap-2 text-small text-muted transition-colors hover:text-ink"
@@ -90,7 +90,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </div>
       </header>
 
-      <div className="container-px flex flex-col gap-16 py-16 sm:py-20">
+      <div className="container-px flex flex-col gap-12 py-12 sm:py-16">
         <Reveal>
           <section className="grid gap-8 lg:grid-cols-[1fr_1.4fr]">
             <SectionTitle>Overview</SectionTitle>

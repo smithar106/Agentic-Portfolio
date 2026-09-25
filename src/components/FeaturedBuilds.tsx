@@ -5,10 +5,10 @@ import { Reveal } from "./Reveal";
 
 export function FeaturedBuilds() {
   return (
-    <section id="projects" className="scroll-mt-20 border-t border-line bg-surface py-20 sm:py-28">
+    <section id="projects" className="scroll-mt-20 border-t border-line bg-surface py-14 sm:py-16">
       <div className="container-px">
         <Reveal>
-          <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading
               eyebrow="Featured Builds"
               title={

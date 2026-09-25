@@ -52,7 +52,7 @@ function LimeCard({ project }: { project: LimeProject }) {
 
 export function LimeSection() {
   return (
-    <section id="lime" className="scroll-mt-20 border-t border-line bg-paper py-20 sm:py-28">
+    <section id="lime" className="scroll-mt-20 border-t border-line bg-paper py-14 sm:py-16">
       <div className="container-px">
         <Reveal>
           <div className="mb-6 flex items-center gap-2">
@@ -75,7 +75,7 @@ export function LimeSection() {
           />
         </Reveal>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {limeProjects.map((p, i) => (
             <Reveal key={p.id} delay={i * 60}>
               <LimeCard project={p} />

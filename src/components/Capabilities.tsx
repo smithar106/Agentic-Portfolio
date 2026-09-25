@@ -5,7 +5,7 @@ import { SectionHeading } from "./ui";
 
 export function Capabilities() {
   return (
-    <section className="border-t border-line bg-paper py-20 sm:py-28">
+    <section className="border-t border-line bg-paper py-14 sm:py-16">
       <div className="container-px">
         <Reveal>
           <SectionHeading
@@ -20,7 +20,7 @@ export function Capabilities() {
           />
         </Reveal>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {capabilities.map((group, i) => {
             const a = accents[group.accent];
             return (

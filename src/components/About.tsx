@@ -6,7 +6,7 @@ export function About() {
   const { about } = profile;
 
   return (
-    <section id="about" className="scroll-mt-20 border-t border-line bg-surface py-20 sm:py-28">
+    <section id="about" className="scroll-mt-20 border-t border-line bg-surface py-14 sm:py-16">
       <div className="container-px">
         <div className="grid gap-12 lg:grid-cols-[1fr_1fr]">
           <Reveal>
