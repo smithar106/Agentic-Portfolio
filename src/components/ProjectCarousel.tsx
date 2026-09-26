@@ -52,7 +52,7 @@ export function ProjectCarousel({ projects }: { projects: Project[] }) {
       </div>
 
       <div className="mt-8 flex items-center justify-between">
-        <div className="flex items-center gap-2" role="tablist" aria-label="Projects">
+        <div className="flex items-center gap-2" aria-label="Project pagination">
           {Array.from({ length: count }).map((_, i) => (
             <button
               key={i}

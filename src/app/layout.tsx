@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AskPortfolio } from "@/components/AskPortfolio";
 import { SITE_URL, isTodo } from "@/data/config";
+import { profile } from "@/data/profile";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,6 +27,28 @@ const mono = JetBrains_Mono({
 });
 
 const base = isTodo(SITE_URL) ? undefined : new URL(SITE_URL);
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  jobTitle: profile.roleLine,
+  description: profile.supporting,
+  url: SITE_URL,
+  email: `mailto:${profile.email}`,
+  sameAs: [
+    profile.github,
+    ...(!isTodo(profile.linkedin) ? [profile.linkedin] : []),
+  ],
+  knowsAbout: [
+    "AI Agents",
+    "Applied AI",
+    "Data Products",
+    "Automation",
+    "Forward Deployed Engineering",
+    "Technical Program Management",
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: base,
@@ -72,6 +95,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${newsreader.variable} ${mono.variable}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <Header />
         <main>{children}</main>
         <Footer />
