@@ -47,4 +47,13 @@ export const accents: Record<AccentKey, AccentStyles> = {
     dot: "bg-violet",
     border: "border-violet/30",
   },
+  green: {
+    text: "text-green",
+    bg: "bg-green",
+    soft: "bg-green-soft",
+    softInk: "bg-green-soft text-green-ink",
+    ink: "text-green-ink",
+    dot: "bg-green",
+    border: "border-green/30",
+  },
 };

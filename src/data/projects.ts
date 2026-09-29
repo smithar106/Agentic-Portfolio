@@ -1,4 +1,4 @@
-export type AccentKey = "blue" | "teal" | "amber" | "violet";
+export type AccentKey = "blue" | "teal" | "amber" | "violet" | "green";
 
 export type Project = {
   slug: string;
@@ -302,6 +302,78 @@ export const projects: Project[] = [
     liveUrl: "https://our-planet.up.railway.app",
     githubUrls: [
       { label: "PLANET", url: "https://github.com/smithar106/Our-Planet" },
+    ],
+  },
+  {
+    slug: "energy-rag",
+    name: "Energy-RAG",
+    eyebrow: "Applied AI · Hybrid Retrieval",
+    tagline:
+      "A hybrid-retrieval RAG agent for historical energy prices — grounded in SQL and real sources.",
+    description:
+      "Energy-RAG answers questions about historical energy prices by keeping quantitative truth (deterministic SQL over EIA data) strictly separate from historical explanation (hybrid vector + lexical retrieval over real EIA and Wikipedia sources). A hard evidence gate and a grounding validator refuse to answer when evidence is insufficient.",
+    category: "Retrieval Systems",
+    featured: true,
+    accent: "green",
+    status: "live",
+    technologies: [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "pgvector",
+      "sentence-transformers",
+      "DeepSeek",
+      "EIA Open Data",
+      "Docker",
+      "Railway",
+    ],
+    highlights: [
+      "Hybrid retrieval: pgvector semantic + PostgreSQL full-text, merged and reranked",
+      "Deterministic SQL price changes tied to explicit observation pairs",
+      "Hard evidence gate: domain, temporal, and source-authority scoring (EIA > Wikipedia)",
+      "Grounding validator recomputes percentages and rejects fabricated figures",
+      "Query-time authoritative EIA source discovery when the KB is insufficient",
+      "Real historical corpus (859 docs / 1,405 chunks) with an inspectable RAG trace",
+    ],
+    problem:
+      "LLMs hallucinate quantitative answers and historical causes. Ask “what caused the biggest increase in U.S. electricity prices in 2017?” and a naive model will happily combine the wrong observation pair, or invent a cause from parametric memory.",
+    solution:
+      "A strict two-path architecture: every number comes from deterministic SQL (with the exact observation pair preserved), and every explanation comes from real retrieved source documents that pass a hard evidence gate. When evidence is insufficient, it refuses rather than guessing — and a grounding validator recomputes percentages from their cited pair to reject inconsistencies.",
+    flow: [
+      { step: "Question", detail: "DeepSeek interprets the question; a deterministic SQL phase identifies the event (e.g. May→June 2017)." },
+      { step: "SQL truth", detail: "Verified numbers, aggregates, and observation-pair price changes computed in PostgreSQL." },
+      { step: "Hybrid retrieval", detail: "pgvector semantic + PostgreSQL full-text search over ~1,400 chunks, merged and reranked." },
+      { step: "Evidence gate", detail: "Composite score (semantic, lexical, temporal, domain, metric, geography, authority) plus hard filters." },
+      { step: "Causal filter", detail: "DeepSeek selects only causally-useful chunks; insufficient evidence triggers EIA source discovery." },
+      { step: "Grounding", detail: "Percentages recomputed from their cited pair; ungrounded numbers rejected." },
+      { step: "Cited answer", detail: "A grounded, cited answer — or an explicit “insufficient evidence”." },
+    ],
+    decisions: [
+      {
+        title: "Quantitative truth vs historical explanation",
+        body: "Numbers come only from SQL; explanations only from retrieved sources. DeepSeek is never the source of truth for a number.",
+      },
+      {
+        title: "Precision over recall",
+        body: "Zero evidence is preferable to irrelevant evidence. The gate is tuned to refuse a causal answer rather than cite vaguely-related articles.",
+      },
+      {
+        title: "Same-pair price changes",
+        body: "Absolute and percentage change always derive from the same observation pair (computed with LAG()), so mismatched statistics can never be combined.",
+      },
+      {
+        title: "Inspectable retrieval",
+        body: "Every ranking component and gate decision is exposed in the RAG trace — nothing is hidden inside an opaque framework.",
+      },
+    ],
+    lessons: [
+      "Zero evidence is preferable to irrelevant evidence.",
+      "Store publication date and event window separately — a 2026 article is never evidence for a 2017 event.",
+      "Recompute the model's arithmetic; don't trust it to combine statistics.",
+    ],
+    liveUrl: "https://energy-research-production.up.railway.app/",
+    githubUrls: [
+      { label: "Energy-RAG", url: "https://github.com/smithar106/Energy-RAG" },
     ],
   },
 ];

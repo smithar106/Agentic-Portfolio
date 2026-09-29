@@ -21,6 +21,7 @@ const config: Config = {
         teal: { DEFAULT: "#0E9384", soft: "#E6F5F2", ink: "#0A5C53" },
         amber: { DEFAULT: "#C77B16", soft: "#FBF1E1", ink: "#8A5208" },
         violet: { DEFAULT: "#6D4BC0", soft: "#F0ECFA", ink: "#43307A" },
+        green: { DEFAULT: "#0F9D58", soft: "#E8F8F0", ink: "#0A5C3F" },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "-apple-system", "sans-serif"],
