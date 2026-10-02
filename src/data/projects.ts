@@ -1,4 +1,4 @@
-export type AccentKey = "blue" | "teal" | "amber" | "violet" | "green";
+export type AccentKey = "blue" | "teal" | "amber" | "violet" | "green" | "maroon";
 
 export type Project = {
   slug: string;
@@ -374,6 +374,76 @@ export const projects: Project[] = [
     liveUrl: "https://energy-research-production.up.railway.app/",
     githubUrls: [
       { label: "Energy-RAG", url: "https://github.com/smithar106/Energy-RAG" },
+    ],
+  },
+  {
+    slug: "embedding-lab",
+    name: "Embedding-Lab",
+    eyebrow: "Applied AI · Semantic Search",
+    tagline:
+      "A semantic library that indexes the same documents three ways — to compare how embedding models retrieve.",
+    description:
+      "Embedding-Lab turns authoritative, open-licensed documents on climate, energy, food, water, cities, and development into a searchable vector library. The same corpus is embedded with three models — MiniLM, BGE, and E5 — into dimension-specific pgvector tables, so any retrieval difference can be attributed to the model alone. A license-gated source catalog and a tool-using agent keep every answer grounded in cited passages.",
+    category: "Retrieval Systems",
+    featured: true,
+    accent: "maroon",
+    status: "live",
+    technologies: [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "pgvector",
+      "sentence-transformers",
+      "DeepSeek",
+      "Docker",
+      "Railway",
+    ],
+    highlights: [
+      "One corpus, three embeddings — MiniLM (384-dim), BGE and E5 (768-dim) in separate HNSW tables",
+      "Identical chunks across models, so any retrieval difference is the model, not the chunking",
+      "Query-side prefixes (BGE/E5) and cosine similarity via pgvector's native vector operators",
+      "Library data model: collections, topics, and per-document license + provenance",
+      "License-gated curation — only CC BY / CC0 sources (no NC), enforced in the source catalog",
+      "Tool-using agent that decides when to retrieve and answers only from cited passages",
+    ],
+    problem:
+      "Embedding models look interchangeable until you compare them. Retrieval quality depends on the model, its dimension, and how queries are phrased — yet most demos hide the model behind an opaque API and never show why one result ranked over another.",
+    solution:
+      "Chunk the same documents once and embed the identical chunks with three different models into separate dimension-specific pgvector tables. A single API returns ranked, cited passages per model, and a tool-using agent retrieves only when the question needs it — exposing the retrieval trace instead of hiding it.",
+    flow: [
+      { step: "Curate", detail: "A license-gated source catalog (CC BY/CC0) across six collections: climate, energy, food, water, cities, development." },
+      { step: "Fetch & clean", detail: "Trafilatura extraction with per-source boilerplate removal and retrieved_at provenance." },
+      { step: "Chunk once", detail: "A deterministic recursive splitter produces identical chunks for every model." },
+      { step: "Embed three ways", detail: "MiniLM (384-dim), BGE and E5 (768-dim) into dimension-specific pgvector tables with HNSW indexes." },
+      { step: "Retrieve", detail: "Query-side prefixes, then cosine similarity via pgvector's native vector operators." },
+      { step: "Answer", detail: "A tool-using agent decides whether to retrieve, then answers only from cited passages." },
+    ],
+    decisions: [
+      {
+        title: "One chunk, three embeddings",
+        body: "The corpus is chunked exactly once and every model embeds the identical units. Any retrieval difference is therefore the model's — not an artifact of different chunking.",
+      },
+      {
+        title: "Dimension-specific tables",
+        body: "pgvector requires a fixed vector width, so MiniLM (384-dim) and BGE/E5 (768-dim) live in separate tables with their own HNSW indexes — three coordinate systems kept cleanly apart.",
+      },
+      {
+        title: "License-gated corpus",
+        body: "Only CC BY/CC0 sources enter the library; NC-licensed institutional sources (IPCC, UN) are excluded, with license and provenance stored per document.",
+      },
+      {
+        title: "Evidence, not synthesis",
+        body: "The agent retrieves evidence and the generator answers only from cited chunks — it refuses rather than fabricate when evidence is thin.",
+      },
+    ],
+    lessons: [
+      "Same chunks, different embeddings — a fair model comparison requires identical text units.",
+      "A 384-dim and a 768-dim vector cannot share a column or index; normalize per model.",
+      "Public access is not redistribution rights — check licenses before ingesting full text.",
+    ],
+    liveUrl: "https://embedding-lab-production.up.railway.app/",
+    githubUrls: [
+      { label: "Embedding-Lab", url: "https://github.com/smithar106/Embedding-Lab" },
     ],
   },
 ];
