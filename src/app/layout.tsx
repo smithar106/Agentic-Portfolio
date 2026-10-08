@@ -58,11 +58,11 @@ const personJsonLd = {
 export const metadata: Metadata = {
   metadataBase: base,
   title: {
-    default: "Arthur Smith — AI Solutions & Forward Deployed Engineering",
+    default: "Arthur Smith — AI Engineer · Technical Program Manager",
     template: "%s — Arthur Smith",
   },
   description:
-    "Arthur Smith builds and deploys AI-powered tools while leading complex technology and data initiatives at global scale. AI solutions, forward deployed engineering, and technical program leadership.",
+    "AI engineer and technical program manager building production LLM applications — RAG systems and agents — and governed data platforms on Databricks.",
   keywords: [
     "Arthur Smith",
     "AI Solutions",
@@ -80,18 +80,18 @@ export const metadata: Metadata = {
     "Unity Catalog",
   ],
   openGraph: {
-    title: "Arthur Smith — AI Solutions & Forward Deployed Engineering",
+    title: "Arthur Smith — AI Engineer · Technical Program Manager",
     description:
-      "I build and deploy AI-powered tools while leading complex technology and data initiatives at global scale.",
+      "AI engineer and technical program manager building production LLM applications (RAG & agents) and governed data platforms on Databricks.",
     type: "website",
     siteName: "Arthur Smith",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arthur Smith — AI Solutions & Forward Deployed Engineering",
+    title: "Arthur Smith — AI Engineer · Technical Program Manager",
     description:
-      "I build and deploy AI-powered tools while leading complex technology and data initiatives at global scale.",
+      "AI engineer and technical program manager building production LLM applications (RAG & agents) and governed data platforms on Databricks.",
     images: ["/opengraph-image"],
   },
   robots: { index: true, follow: true },
