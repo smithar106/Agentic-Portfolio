@@ -76,16 +76,16 @@ export function LimeSection() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
                 {limeOverview.metrics.slice(0, 5).map((m) => (
                   <div
                     key={m.label}
-                    className="flex flex-col gap-1 rounded-2xl border border-line bg-surface p-4 shadow-card"
+                    className="flex min-w-0 flex-col gap-1.5 overflow-hidden rounded-2xl border border-line bg-surface p-4 shadow-card"
                   >
-                    <span className="font-sans text-title font-semibold text-teal-ink">
+                    <span className="font-sans text-section font-semibold leading-none tracking-tight text-teal-ink">
                       {m.value}
                     </span>
-                    <span className="text-micro text-muted">{m.label}</span>
+                    <span className="text-micro leading-snug text-muted">{m.label}</span>
                   </div>
                 ))}
               </div>
