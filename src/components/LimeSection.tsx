@@ -62,8 +62,8 @@ export function LimeSection() {
 
         {/* Overview */}
         <Reveal delay={60}>
-          <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_1fr]">
-            <div className="flex flex-col gap-4">
+          <div className="mt-10 flex flex-col gap-8">
+            <div className="flex max-w-3xl flex-col gap-4">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-small text-muted">
                 <span className="font-semibold text-ink">{limeOverview.role}</span>
                 <span className="h-1 w-1 rounded-full bg-faint" aria-hidden="true" />
@@ -76,16 +76,18 @@ export function LimeSection() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-                {limeOverview.metrics.slice(0, 5).map((m) => (
+              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+                {limeOverview.metrics.map((m) => (
                   <div
                     key={m.label}
-                    className="flex min-w-0 flex-col gap-1.5 overflow-hidden rounded-2xl border border-line bg-surface p-4 shadow-card"
+                    className="flex flex-col rounded-2xl border border-line bg-surface p-5 shadow-card"
                   >
                     <span className="font-sans text-section font-semibold leading-none tracking-tight text-teal-ink">
                       {m.value}
                     </span>
-                    <span className="text-micro leading-snug text-muted">{m.label}</span>
+                    <span className="mt-2 text-small leading-snug text-muted">
+                      {m.label}
+                    </span>
                   </div>
                 ))}
               </div>
