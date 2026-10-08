@@ -1,19 +1,16 @@
-import { TODO_LINKEDIN_URL, TODO_RESUME_URL } from "./config";
-
 export const profile = {
   name: "Arthur Smith",
   roleLine:
-    "AI Solutions · Forward Deployed Engineering · Technical Program Leadership",
+    "AI Engineer · Technical Program Manager · Production LLM Applications · RAG & Agents · Databricks",
   headline:
     "I turn complex operational problems into AI, data, and automation products.",
   supporting:
-    "I build and deploy AI-powered tools while leading complex technology and data initiatives at global scale.",
+    "I'm an AI engineer and technical program leader. I build production LLM applications — RAG systems and agents — and governed data platforms on Databricks, then lead the programs that ship them at scale.",
   location: "Remote — United States",
   availability: "Open to select opportunities",
   email: "smithar106@gmail.com",
   github: "https://github.com/smithar106",
-  linkedin: TODO_LINKEDIN_URL,
-  resume: TODO_RESUME_URL,
+  linkedin: "https://www.linkedin.com/in/arthursmith11/",
 
   about: {
     summary:
@@ -35,7 +32,7 @@ export const profile = {
     stats: [
       { value: "4.5+", label: "years at Lime" },
       { value: "75+", label: "markets" },
-      { value: "4", label: "AI/data products built" },
+      { value: "7", label: "AI/data products built" },
     ],
   },
 
@@ -68,7 +65,6 @@ export const nav = {
     { label: "Lime", href: "/#lime" },
     { label: "About", href: "/#about" },
     { label: "Ask Portfolio", href: "/#ask" },
-    { label: "Resume", href: profile.resume, external: true },
     { label: "GitHub", href: profile.github, external: true },
   ],
   cta: { label: "Let's Talk", href: "/#contact" },

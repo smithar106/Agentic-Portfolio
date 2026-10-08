@@ -22,9 +22,9 @@ const liveProducts = projects
 const entries: Entry[] = [
   {
     keywords: ["built", "ai", "build", "made", "created", "projects", "products"],
-    answer: `Arthur has personally built four AI and data products: ${liveProducts
+    answer: `Arthur has personally built ${liveProducts.length} AI and data products: ${liveProducts
       .map((p) => p.name)
-      .join(", ")}. Compass is an evidence-based decision intelligence platform; Weather Outliers is a production anomaly-detection and explanation system across 50 cities; Flight Pulse is U.S. flight operations intelligence with a grounded AI reasoning layer; and PLANET is an autonomous Earth-intelligence agent.`,
+      .join(", ")}. They span decision intelligence, anomaly detection, operations intelligence, autonomous agents, hybrid retrieval, semantic search, and a governed Databricks data platform.`,
     references: liveProducts.map((p) => ({
       label: p.name,
       href: `/projects/${p.slug}`,
@@ -39,10 +39,10 @@ const entries: Entry[] = [
   {
     keywords: ["data", "pipeline", "sql", "analytics", "snowflake", "database", "warehouse"],
     answer:
-      "Arthur's data experience spans SQL, Snowflake, PostgreSQL, data pipelines, APIs, and analytics. His products are data-first: Weather Outliers runs a scheduled pipeline over ERA5 climatology, Compass builds an evidence engine over 50,000+ implementations, and Flight Pulse normalizes daily flight data against historical baselines. At Lime he led data and automation across 75+ markets.",
+      "Arthur's data experience spans SQL, Databricks, Snowflake, PostgreSQL, Unity Catalog, data pipelines, APIs, and analytics. His products are data-first: Databricks Energy Intelligence runs a governed medallion pipeline (Bronze → Silver → Gold) over EIA data with AI/BI Genie natural-language analytics, Weather Outliers runs a scheduled pipeline over ERA5 climatology, and Compass builds an evidence engine over 50,000+ implementations. At Lime he led data and automation across 75+ markets.",
     references: [
+      { label: "Databricks Energy Intelligence", href: "/projects/databricks-energy-intelligence" },
       { label: "Weather Outliers", href: "/projects/weather-intelligence" },
-      { label: "Compass", href: "/projects/compass" },
     ],
   },
   {
@@ -67,6 +67,14 @@ const entries: Entry[] = [
     references: [
       { label: "Compass", href: "/projects/compass" },
       { label: "Flight Pulse", href: "/projects/flight-pulse" },
+    ],
+  },
+  {
+    keywords: ["databricks", "unity catalog", "genie", "medallion", "energy", "data platform", "spark"],
+    answer:
+      "Arthur's Databricks work is best shown in Databricks Energy Intelligence — a governed energy data platform built with Databricks, Unity Catalog, and AI/BI Genie. It ingests U.S. EIA historical datasets, runs a medallion architecture (Bronze → Silver → Gold), resolves 767 duplicate series/year combinations with deterministic SQL, and produces 2,373 validated annual observations across 33 energy series. Genie provides natural-language analytics over the curated tables, with data boundaries enforced so unsupported questions are not answered as supported.",
+    references: [
+      { label: "Databricks Energy Intelligence", href: "/projects/databricks-energy-intelligence" },
     ],
   },
 ];

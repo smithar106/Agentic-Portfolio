@@ -47,6 +47,11 @@ const personJsonLd = {
     "Automation",
     "Forward Deployed Engineering",
     "Technical Program Management",
+    "AI Engineering",
+    "RAG",
+    "Production LLM Applications",
+    "Databricks",
+    "Unity Catalog",
   ],
 };
 
@@ -64,10 +69,15 @@ export const metadata: Metadata = {
     "Forward Deployed Engineer",
     "Applied AI",
     "Technical Program Manager",
+    "AI Engineer",
     "AI Agents",
     "AI Engineering",
     "Data Products",
     "Automation",
+    "RAG",
+    "Production LLM Applications",
+    "Databricks",
+    "Unity Catalog",
   ],
   openGraph: {
     title: "Arthur Smith — AI Solutions & Forward Deployed Engineering",

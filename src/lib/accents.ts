@@ -65,4 +65,13 @@ export const accents: Record<AccentKey, AccentStyles> = {
     dot: "bg-maroon",
     border: "border-maroon/30",
   },
+  databricks: {
+    text: "text-databricks",
+    bg: "bg-databricks",
+    soft: "bg-databricks-soft",
+    softInk: "bg-databricks-soft text-databricks-ink",
+    ink: "text-databricks-ink",
+    dot: "bg-databricks",
+    border: "border-databricks/30",
+  },
 };

@@ -19,8 +19,8 @@ export function FinalCta() {
                 <span className="serif-accent text-accent">how to ship it.</span>
               </h2>
               <p className="max-w-xl text-balance text-lead text-muted">
-                I&apos;m open to forward-deployed engineering, applied AI, and
-                technical program leadership opportunities.
+                I&apos;m open to AI engineering, forward-deployed engineering, applied
+                AI, and technical program leadership opportunities.
               </p>
 
               <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
@@ -35,11 +35,6 @@ export function FinalCta() {
                 <ActionLink href={profile.github} variant="secondary" external>
                   GitHub
                 </ActionLink>
-                {!isTodo(profile.resume) && (
-                  <ActionLink href={profile.resume} variant="secondary" external>
-                    Resume
-                  </ActionLink>
-                )}
               </div>
             </div>
           </div>

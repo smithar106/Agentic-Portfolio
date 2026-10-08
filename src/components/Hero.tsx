@@ -1,12 +1,11 @@
 import { profile } from "@/data/profile";
 import { isTodo } from "@/data/config";
 import { ActionLink } from "./ui";
-import { GitHubIcon, LinkedInIcon, DocIcon, SparkIcon } from "./icons";
+import { GitHubIcon, LinkedInIcon, SparkIcon } from "./icons";
 import { HeroVisual } from "./HeroVisual";
 
 export function Hero() {
   const hasLinkedIn = !isTodo(profile.linkedin);
-  const hasResume = !isTodo(profile.resume);
 
   return (
     <section className="relative overflow-hidden">
@@ -56,16 +55,6 @@ export function Hero() {
                 className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 transition-colors hover:text-ink"
               >
                 <LinkedInIcon /> LinkedIn
-              </a>
-            )}
-            {hasResume && (
-              <a
-                href={profile.resume}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 transition-colors hover:text-ink"
-              >
-                <DocIcon /> Resume
               </a>
             )}
           </div>

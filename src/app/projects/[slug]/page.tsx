@@ -6,6 +6,7 @@ import { isTodo } from "@/data/config";
 import { accents } from "@/lib/accents";
 import { FlowDiagram } from "@/components/FlowDiagram";
 import { WeatherCase } from "@/components/WeatherCase";
+import { MedallionDiagram } from "@/components/MedallionDiagram";
 import { Reveal } from "@/components/Reveal";
 import { ActionLink, Eyebrow, Pill } from "@/components/ui";
 import { ArrowUpRight, ArrowRight } from "@/components/icons";
@@ -136,6 +137,53 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 <SectionTitle>Architecture</SectionTitle>
               </div>
               <WeatherCase />
+            </section>
+          </Reveal>
+        )}
+
+        {project.slug === "databricks-energy-intelligence" && (
+          <Reveal>
+            <section className="flex flex-col gap-6">
+              <div className="flex items-center gap-3">
+                <span className={`h-2 w-2 rounded-full ${a.dot}`} />
+                <SectionTitle>Architecture</SectionTitle>
+              </div>
+              <MedallionDiagram />
+            </section>
+          </Reveal>
+        )}
+
+        {project.screenshots && project.screenshots.length > 0 && (
+          <Reveal>
+            <section className="flex flex-col gap-6">
+              <SectionTitle>Screenshots</SectionTitle>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {project.screenshots.map((s) => (
+                  <figure
+                    key={s.label}
+                    className="flex flex-col gap-3 overflow-hidden rounded-2xl border border-line bg-surface shadow-card"
+                  >
+                    <div className="dot-grid flex aspect-[4/3] items-center justify-center bg-paper">
+                      {s.image && !isTodo(s.image) ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={s.image}
+                          alt={s.label}
+                          loading="lazy"
+                          className="h-full w-full object-cover"
+                        />
+                      ) : (
+                        <span className="px-6 text-center text-small text-faint">
+                          Screenshot coming soon
+                        </span>
+                      )}
+                    </div>
+                    <figcaption className="px-4 pb-4 text-small text-muted">
+                      {s.label}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
             </section>
           </Reveal>
         )}

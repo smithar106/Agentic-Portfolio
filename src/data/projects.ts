@@ -1,4 +1,16 @@
-export type AccentKey = "blue" | "teal" | "amber" | "violet" | "green" | "maroon";
+export type AccentKey =
+  | "blue"
+  | "teal"
+  | "amber"
+  | "violet"
+  | "green"
+  | "maroon"
+  | "databricks";
+
+export type Screenshot = {
+  label: string;
+  image?: string;
+};
 
 export type Project = {
   slug: string;
@@ -20,6 +32,7 @@ export type Project = {
   liveUrl?: string;
   githubUrls: { label: string; url: string }[];
   image?: string;
+  screenshots?: Screenshot[];
 };
 
 export const projects: Project[] = [
@@ -444,6 +457,77 @@ export const projects: Project[] = [
     liveUrl: "https://embedding-lab-production.up.railway.app/",
     githubUrls: [
       { label: "Embedding-Lab", url: "https://github.com/smithar106/Embedding-Lab" },
+    ],
+  },
+  {
+    slug: "databricks-energy-intelligence",
+    name: "Databricks Energy Intelligence",
+    eyebrow: "Data Platform · Natural-Language Analytics",
+    tagline:
+      "Building a governed energy data platform with Databricks, Unity Catalog & AI/BI Genie.",
+    description:
+      "An end-to-end energy intelligence platform that transforms historical U.S. energy data into governed, queryable analytics. It combines scheduled data ingestion, a medallion data architecture, SQL-based transformations, data-quality validation, and natural-language analytics through Databricks AI/BI Genie.",
+    category: "Data Platform",
+    featured: true,
+    accent: "databricks",
+    status: "live",
+    technologies: [
+      "Databricks",
+      "SQL",
+      "Unity Catalog",
+      "AI/BI Genie",
+      "Google Drive",
+      "Medallion Architecture",
+      "ETL/ELT",
+      "Data Quality Validation",
+    ],
+    highlights: [
+      "2,373 validated annual observations across 33 energy series",
+      "767 duplicate series/year combinations identified and resolved",
+      "Deterministic SQL-based deduplication and data-quality checks",
+      "Natural-language analytics over curated data via AI/BI Genie",
+      "Data boundaries enforced so unsupported questions are not answered as supported",
+    ],
+    problem:
+      "U.S. Energy Information Administration (EIA) datasets spanning 1949–2025 arrive as overlapping source files. Combining them naively produces duplicate series/year rows and inconsistent figures, and business users cannot easily ask questions of the result without writing SQL.",
+    solution:
+      "A governed medallion pipeline on Databricks. Raw EIA files are ingested on a schedule from Google Drive into a Bronze layer, then cleaned, standardized, deduplicated, and validated into Silver, and finally shaped into curated analytical tables in Gold. Unity Catalog governs every managed asset, and AI/BI Genie provides natural-language analytics over the curated tables — within boundaries that keep unsupported questions (such as state-level queries against national-level data) from being presented as supported answers.",
+    flow: [
+      { step: "Source", detail: "U.S. EIA historical energy datasets (1949–2025)." },
+      { step: "Ingest", detail: "Google Drive integration with scheduled data ingestion." },
+      { step: "Bronze", detail: "Raw source data lands as-is for traceability." },
+      { step: "Silver", detail: "Cleaning, standardization, deduplication, and validation." },
+      { step: "Gold", detail: "Curated analytical tables optimized for business questions." },
+      { step: "Govern & Query", detail: "Unity Catalog governance; Genie natural-language analytics." },
+    ],
+    decisions: [
+      {
+        title: "Medallion architecture",
+        body: "Bronze, Silver, and Gold layers each have one job — raw landing, cleaning and validation, and curated analytics — so lineage stays clear and each transformation is auditable.",
+      },
+      {
+        title: "Deterministic deduplication",
+        body: "The 767 duplicate series/year combinations caused by overlapping source files are resolved with explicit SQL logic, not by guessing — the result is reproducible.",
+      },
+      {
+        title: "Validation before Gold",
+        body: "Every observation is validated before it reaches the Gold layer, so curated tables contain only clean, deduplicated records.",
+      },
+      {
+        title: "Governed analytics",
+        body: "Unity Catalog manages the data assets, and Genie answers natural-language questions against the curated tables — bounded by the data that actually exists.",
+      },
+    ],
+    lessons: [
+      "Overlapping source files are a data-quality problem, not a data-science problem — solve them deterministically in SQL.",
+      "A natural-language interface is only as trustworthy as the curated tables underneath it.",
+      "Govern the data boundaries as carefully as the data itself.",
+    ],
+    githubUrls: [],
+    screenshots: [
+      { label: "Databricks workspace — medallion pipeline" },
+      { label: "AI/BI Genie natural-language query" },
+      { label: "Pipeline results & data-quality validation" },
     ],
   },
 ];

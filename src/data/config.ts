@@ -1,9 +1,7 @@
-// Central placeholders. Replace the TODO_* values with real data as it becomes
-// available — no other file should need to change.
+// Central site configuration. `isTodo` is used to mark optional links that are
+// not yet available — those render as disabled rather than broken links.
 
-export const TODO_LINKEDIN_URL = "TODO_LINKEDIN_URL";
-export const TODO_RESUME_URL = "TODO_RESUME_URL";
-export const SITE_URL = "https://agentic-portfolio-production-9b32.up.railway.app";
+export const SITE_URL = "https://arthursmithportfolio.up.railway.app";
 
 export function isTodo(value?: string): boolean {
   return Boolean(value && value.startsWith("TODO_"));

@@ -11,6 +11,7 @@ export const capabilities: CapabilityGroup[] = [
     items: [
       "Agents",
       "LLM APIs",
+      "RAG",
       "Tool calling",
       "Grounded generation",
       "Natural-language interfaces",
@@ -23,8 +24,10 @@ export const capabilities: CapabilityGroup[] = [
     accent: "teal",
     items: [
       "SQL",
+      "Databricks",
       "Snowflake",
       "PostgreSQL",
+      "Unity Catalog",
       "Data pipelines",
       "APIs",
       "Analytics",
