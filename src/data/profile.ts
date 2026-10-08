@@ -14,7 +14,7 @@ export const profile = {
 
   about: {
     summary:
-      "I sit between the user, the business, the data, and the technology. I spent 4.5+ years at Lime scaling technology-enabled operations across 75+ markets, and I increasingly build and deploy my own AI and data products — agents, pipelines, and automation that solve real operational problems end to end.",
+      "I sit between the user, the business, the data, and the technology. I spent 4.5+ years at Lime scaling technology-enabled operations across 100+ markets, and I increasingly build and deploy my own AI and data products — agents, pipelines, and automation that solve real operational problems end to end.",
     pillars: [
       {
         title: "Technical building",
@@ -31,7 +31,7 @@ export const profile = {
     ],
     stats: [
       { value: "4.5+", label: "years at Lime" },
-      { value: "75+", label: "markets" },
+      { value: "100+", label: "markets" },
       { value: "7", label: "AI/data products built" },
     ],
   },

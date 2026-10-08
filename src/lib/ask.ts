@@ -1,6 +1,5 @@
 import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
-import { limeProjects } from "@/data/lime-projects";
 
 export type AskReference = { label: string; href?: string };
 
@@ -39,7 +38,7 @@ const entries: Entry[] = [
   {
     keywords: ["data", "pipeline", "sql", "analytics", "snowflake", "database", "warehouse"],
     answer:
-      "Arthur's data experience spans SQL, Databricks, Snowflake, PostgreSQL, Unity Catalog, data pipelines, APIs, and analytics. His products are data-first: Databricks Energy Intelligence runs a governed medallion pipeline (Bronze → Silver → Gold) over EIA data with AI/BI Genie natural-language analytics, Weather Outliers runs a scheduled pipeline over ERA5 climatology, and Compass builds an evidence engine over 50,000+ implementations. At Lime he led data and automation across 75+ markets.",
+      "Arthur's data experience spans SQL, Databricks, Snowflake, PostgreSQL, Unity Catalog, data pipelines, APIs, and analytics. His products are data-first: Databricks Energy Intelligence runs a governed medallion pipeline (Bronze → Silver → Gold) over EIA data with AI/BI Genie natural-language analytics, Weather Outliers runs a scheduled pipeline over ERA5 climatology, and Compass builds an evidence engine over 50,000+ implementations. At Lime he led data and automation across 100+ markets.",
     references: [
       { label: "Databricks Energy Intelligence", href: "/projects/databricks-energy-intelligence" },
       { label: "Weather Outliers", href: "/projects/weather-intelligence" },
@@ -48,8 +47,8 @@ const entries: Entry[] = [
   {
     keywords: ["lime", "scale", "market", "program", "lead", "leadership", "operations"],
     answer:
-      "At Lime, Arthur spent 4.5+ years scaling technology-enabled operations across 75+ markets. His professional work there included internal developer tooling (LimeCLI), an operations command center for outage monitoring, a risk register with an AI analyst, a centralized dashboards hub, and automated monthly reporting.",
-    references: [{ label: "Technology at Global Scale", href: "/#lime" }],
+      "At Lime, Arthur is a Program Manager, Global Strategy & Operations (2022–Present), leading cross-functional data, technology, and operational initiatives across 100+ global markets. His work spans an enterprise data retrieval agent (Snowflake Cortex), an agentic city proposal builder, an autonomous regulatory reporting pipeline covering 75 markets, an AI compliance intelligence prototype, and an enterprise AI enablement program.",
+    references: [{ label: "Enterprise work at Lime", href: "/#lime" }],
   },
   {
     keywords: ["reliability", "ground", "grounded", "hallucinat", "validate", "safe", "trust"],
